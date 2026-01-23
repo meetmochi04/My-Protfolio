@@ -4,227 +4,414 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Meet Mochi | Portfolio</title>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4p5V+Z9myP1hR9KZ+8CA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer" />
 
-  <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css" />
-  <meta name="description" content="Portfolio of Meet Mochi — MCA student and Web Developer specializing in PHP, Web Design, and Frontend Development." />
+
+  <meta name="description" content="Meet Mochi — MCA Student & Web Developer Portfolio" />
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#">Meet Mochi<span class="brand-sub"> — Portfolio</span></a>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact" class="cta">Contact</a>
-      </nav>
-      <button id="mobileToggle" class="mobile-toggle" aria-label="menu">☰</button>
-    </div>
-  </header>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-left">
-          <p class="eyebrow">Creative Developer & Designer</p>
-          <h1 class="hero-title">
-            Hello, I'm <span class="hero-sub">Meet Mochi</span>
-          </h1>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#">Meet Mochi<span> — Portfolio</span></a>
 
-          <p class="hero-desc">
-            I’m currently pursuing my <strong>Master of Computer Applications (MCA)</strong> and passionate about building functional, visually appealing, and responsive web applications.
-            I focus on JAVA, PYTHON, PHP, JavaScript, and clean UI design that delivers smooth user experiences.
-          </p>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact" class="cta">Contact</a>
+    </nav>
 
-          <div class="hero-ctas">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-outline">Hire Me</a>
-          </div>
+    <!-- 🔥 THIS BUTTON MUST BE HERE -->
+    <button id="themeToggle" class="theme-toggle" type="button">
+      🌙
+    </button>
+  </div>
+</header>
 
-          <div class="stats">
-            <div class="stat">
-              <div class="stat-num">10+</div>
-              <div class="stat-label">Projects Completed</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">5+</div>
-              <div class="stat-label">Happy Clients</div>
-            </div>
-          </div>
-        </div>
 
-        <div class="hero-right">
-          <div class="laptop-mock">
-            <img src="mp.jpg" alt="Profile" class="profile-photo" />
-          </div>
-        </div>
-      </div>
-    </section>
+<main>
 
-    <!-- About -->
-    <section id="about" class="section about">
-      <div class="container about-grid">
-        <div class="about-text">
-          <h2>About Me</h2>
-          <p>
-            I'm a passionate web developer currently pursuing a <strong>Master’s degree in Computer Applications (MCA)</strong>.  
-            I specialize in creating PHP-based web applications, including billing systems, inventory management tools, and custom dashboards.
-          </p>
+<!-- HERO -->
+<section id="home" class="section hero-home">
+  <div class="container hero-container">
 
-          <ul class="bullets">
-            <li>Strong in HTML, CSS, JavaScript, JAVA and PHP</li>
-            <li>Experienced with MySQL, DOMPDF, and WhatsApp API integration</li>
-            <li>Dedicated to building responsive and visually engaging user interfaces</li>
-          </ul>
+    <!-- LEFT SOCIAL -->
+  <div class="hero-social">
 
-          <a class="btn btn-outline" href="#contact">Get in touch</a>
-        </div>
+  <!-- LINKEDIN -->
+  <a href="https://www.linkedin.com/in/meet-mochi-322758311/"
+     target="_blank" aria-label="LinkedIn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 24V7h5v17H0zm7.5-17h4.8v2.3h.1c.7-1.3 2.4-2.7 5-2.7 5.3 0 6.3 3.5 6.3 8V24h-5V15c0-2.2 0-5-3-5s-3.5 2.3-3.5 4.9V24h-5V7z"/>
+    </svg>
+  </a>
 
-        <aside class="about-cards">
-          <div class="card small">
-            <div class="card-top">95%</div>
-            <div class="card-body">Client satisfaction through quality and performance</div>
-          </div>
+  <!-- GITHUB -->
+  <a href="https://github.com/meetmochi04"
+     target="_blank" aria-label="GitHub">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.1 3.29 9.43 7.86 10.96.57.1.78-.25.78-.55v-2.02c-3.2.7-3.87-1.55-3.87-1.55-.52-1.33-1.28-1.68-1.28-1.68-1.04-.7.08-.69.08-.69 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.52-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.28 1.18-3.08-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.8 1.18 1.82 1.18 3.08 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.07.78 2.16v3.2c0 .3.21.65.79.54A11.53 11.53 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5z"/>
+    </svg>
+  </a>
 
-          <div class="card small profile">
-            <img src="mp.jpg" alt="Profile" />
-            <div>
-              <div class="card-title">Meet Mochi</div>
-              <div class="card-sub">Web Developer | MCA Student</div>
-            </div>
-          </div>
+</div>
 
-          <div class="card small">
-            <div class="card-body">I enjoy turning ideas into real, user-friendly digital products.</div>
-          </div>
-        </aside>
-      </div>
-    </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section projects">
-      <div class="container">
-        <h2>My Projects</h2>
-        <p class="muted">Some of my best works — click for more details</p>
+    <!-- CENTER CONTENT -->
+    <div class="hero-content">
+      <p class="hero-hi">Hello, I'm</p>
+      <h1 class="hero-name">Meet Mochi</h1>
+      <p class="hero-role">Software Developer</p>
 
-        <div class="projects-grid">
-          <article class="project-card">
-            <img src="ma.jpg" alt="Project thumbnail" />
-            <div class="project-meta">
-              <h3>LavnayaBill (Billing System)</h3>
-              <p>PHP-based billing system with WhatsApp sharing integration and auto PDF generation.</p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <img src="ban.jpg" alt="Project thumbnail" />
-            <div class="project-meta">
-              <h3>Cricket Score Manager</h3>
-              <p>Tracks over-by-over details with real-time updates and player stats dashboard.</p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <img src="rr.jpg" alt="Project thumbnail" />
-            <div class="project-meta">
-              <h3>Portfolio Website</h3>
-              <p>My personal responsive portfolio built using HTML, CSS, and JavaScript (Dark Theme).</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="section experience">
-      <div class="container">
-        <h2>Experience & Learning</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-left">
-              <strong>Freelance Developer</strong>
-              <span class="muted">2024 — Present</span>
-            </div>
-            <div class="timeline-right">
-              <p>Working on web development projects including billing systems, websites, and business tools using JAVA, HTML, and CSS.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-left">
-              <strong>Intern - Frontend Developer</strong>
-              <span class="muted">April 2025 — July 2025</span>
-            </div>
-            <div class="timeline-right">
-              <p>Assisted in creating responsive layouts, improving site performance, and integrating databases.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section contact">
-      <div class="container contact-grid">
-        <div>
-          <h2>Contact Me</h2>
-          <p>If you’d like to collaborate or discuss a project, feel free to reach out. I usually respond within 24 hours.</p>
-
-          <ul class="contact-list">
-            <li><strong>Email:</strong> <a href="mailto:mochimeet141@gmail.com">mochimeet141@gmail.com</a></li>
-            <li><strong>WhatsApp:</strong> <a href="https://wa.me/919033012319" target="_blank" rel="noopener">+91 90330 12319</a></li>
-            <li><strong>Location:</strong> India</li>
-          </ul>
-        </div>
-
-        <form class="contact-form" action="mailto:mochimeet141@gmail.com" method="post" enctype="text/plain">
-          <label>
-            Name
-            <input name="Name" type="text" placeholder="Your name" required>
-          </label>
-
-          <label>
-            Email
-            <input name="Email" type="email" placeholder="you@example.com" required>
-          </label>
-
-          <label>
-            Message
-            <textarea name="Message" rows="5" placeholder="Tell me about your project..." required></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <nav class="footer-nav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-      </nav>
-
-      <div class="footer-right">
-        <span class="email">mochimeet141@gmail.com</span>
-        <div class="social">
-          <a href="#" aria-label="github">GH</a>
-          <a href="#" aria-label="linkedin">LI</a>
-        </div>
+      <div class="hero-buttons">
+        <a href="assets/Meet_Mochi_CV.pdf" download class="btn outline">
+          Download CV
+        </a>
+        <a href="#about" class="btn primary">
+          About
+        </a>
       </div>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <!-- IMAGE AREA -->
+    <div class="hero-image-wrap">
+      <div class="hero-arch">
+        <img src="assets/k.avif" alt="Meet Mochi">
+      </div>
+    </div>
+    <!-- SCROLL MOUSE -->
+<div class="mouse-scroll">
+  <span class="wheel"></span>
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="section about-section">
+  <div class="container">
+
+    <p class="section-sub">My Intro</p>
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-grid">
+
+      <!-- LEFT IMAGE -->
+      <div class="about-img">
+        <img src="assets/mc.jpg" alt="Profile Image">
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="about-content">
+
+        <!-- STATS -->
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-icon">🏅</span>
+            <h4>Experience</h4>
+            <p>2+ Years Working</p>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-icon">📁</span>
+            <h4>Completed</h4>
+            <p>10+ Projects</p>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-icon">🎧</span>
+            <h4>Support</h4>
+            <p>Online 24/7</p>
+          </div>
+        </div>
+
+        <!-- SUMMARY -->
+        <p class="about-text">
+          I'm <strong>Meet Mochi</strong>, a passionate and dedicated Web Developer specializing
+          in building responsive and user-friendly web applications.
+          With a strong foundation in frontend and backend technologies,
+          I craft seamless user experiences and scalable systems.
+          <br><br>
+          My journey in tech is driven by continuous learning and hands-on
+          experience through real-world projects. I enjoy writing clean,
+          maintainable code and collaborating effectively in team environments.
+          I’m always excited to bring ideas to life through technology.
+        </p>
+
+        <a href="#contact" class="btn primary">Contact Me</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills" class="section dark">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>PHP</span>
+      <span>Java</span>
+      <span>Python</span>
+      <span>MySQL</span>
+      <span>Git</span>
+      <span>DOMPDF</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section projects-section">
+  <div class="container">
+
+    <p class="section-sub">My Work</p>
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="assets/ban.jpg" alt="Pizza Application">
+        <h3>Cricket Score</h3>
+        <a href="https://github.com/YOUR_USERNAME/pizza-app" target="_blank" class="demo-btn">
+          Demo ▶
+        </a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="assets/ma.jpg" alt="Symbiotic Growth Initiative">
+        <h3>Bill Inventory</h3>
+        <a href="https://github.com/YOUR_USERNAME/greenmind" target="_blank" class="demo-btn">
+          Demo ▶
+        </a>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="assets/rr.png" alt="Memory Card Game">
+        <h3>Protfolio</h3>
+        <a href="https://github.com/meetmochi04/My-Protfolio/" target="_blank" class="demo-btn">
+          Demo ▶
+        </a>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <img src="assets/p.png" alt="Happy Diwali Card">
+        <h3>Pet Care Shop</h3>
+        <a href="https://github.com/meetmochi04/onlinepetcareshop" target="_blank" class="demo-btn">
+          Demo ▶
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section abilities-section">
+  <div class="container">
+
+    <p class="section-sub">My Abilities</p>
+    <h2 class="section-title">My Experience</h2>
+
+    <div class="abilities-grid">
+
+      <!-- Frontend -->
+      <div class="ability-card">
+        <h3>Frontend<br>Development</h3>
+        <ul>
+          <li>HTML</li>
+          <li>CSS / SCSS</li>
+          <li>JavaScript</li>
+          <li>Tailwind CSS</li>
+          <li>React</li>
+          <li>GSAP</li>
+        </ul>
+      </div>
+
+      <!-- Backend -->
+      <div class="ability-card">
+        <h3>Backend<br>Development</h3>
+        <ul>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>Java</li>
+          <li>Python</li>
+        </ul>
+      </div>
+
+      <!-- Databases -->
+      <div class="ability-card">
+        <h3>Databases</h3>
+        <ul>
+          <li>MongoDB</li>
+          <li>SQL</li>
+          <li>PgAdmin</li>
+          <li>Firebase</li>
+        </ul>
+      </div>
+
+      <!-- Tools -->
+      <div class="ability-card">
+        <h3>Tools</h3>
+        <ul>
+          <li>Git</li>
+          <li>VS Code</li>
+        </ul>
+      </div>
+
+      <!-- Framework -->
+      <div class="ability-card">
+        <h3>Framework</h3>
+        <ul>
+          <li>Spring</li>
+          <li>Hibernate</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="services" class="section services-section">
+  <div class="container">
+    <p class="section-sub">My Services</p>
+    <h2 class="section-title">What I Offer</h2>
+
+    <div class="services-grid">
+
+      <div class="service-card" onclick="openModal('frontend')">
+        <h3>Frontend<br>Development</h3>
+        <span class="see-more">See More ▶</span>
+      </div>
+
+      <div class="service-card" onclick="openModal('backend')">
+        <h3>Backend<br>Development</h3>
+        <span class="see-more">See More ▶</span>
+      </div>
+
+      <div class="service-card" onclick="openModal('fullstack')">
+        <h3>Full-Stack<br>Web Development</h3>
+        <span class="see-more">See More ▶</span>
+      </div>
+
+      <div class="service-card" onclick="openModal('database')">
+        <h3>Database<br>Design & Management</h3>
+        <span class="see-more">See More ▶</span>
+      </div>
+
+      <div class="service-card" onclick="openModal('git')">
+        <h3>Version Control<br>& Git Workflows</h3>
+        <span class="see-more">See More ▶</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <p class="contact-sub">Get in touch</p>
+    <h2 class="contact-title">Contact Me</h2>
+
+    <div class="contact-grid">
+
+      <!-- LEFT CONTACT CARDS -->
+      <div class="contact-cards">
+
+        <div class="contact-card">
+          <div class="icon">✉️</div>
+          <h4>Email</h4>
+          <p>mochimeet141@gmail.com</p>
+          <a href="mailto:mochimeet141@gmail.com">Write Me →</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="icon">📱</div>
+          <h4>WhatsApp</h4>
+          <p>+91 90330 12319</p>
+          <a href="https://wa.me/919033012319" target="_blank">Write Me →</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="icon">💼</div>
+          <h4>LinkedIn</h4>
+          <p>Meet Mochi</p>
+          <a href="https://www.linkedin.com/in/meet-mochi-322758311/" target="_blank">Write Me →</a>
+        </div>
+
+      </div>
+
+      <!-- RIGHT FORM -->
+      <form class="contact-form">
+        <label>
+          Name
+          <input type="text" placeholder="Enter name" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" placeholder="Enter email" required>
+        </label>
+
+        <label>
+          Message
+          <textarea rows="5" placeholder="Write your message" required></textarea>
+        </label>
+
+        <button type="submit" class="btn primary">Send Message</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<footer>
+  <p>© 2026 Meet Mochi</p>
+</footer>
+<!-- FLOATING BOTTOM NAVBAR -->
+
+<div id="floatingNav" class="floating-nav">
+ 
+  <a href="#about" class="nav-item">👤</a>
+  <a href="#skills" class="nav-item">⚡</a>
+  <a href="#projects" class="nav-item">💼</a>
+  <a href="#contact" class="nav-item">✉️</a>
+</div>
+<script src="script.js"></script>
+
+<!-- SERVICE MODAL -->
+<div id="serviceModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">✕</span>
+
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+
+    <ul id="modalList"></ul>
+  </div>
+</div>
+
 </body>
 </html>
-
-
-
