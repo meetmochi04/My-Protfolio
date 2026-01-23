@@ -1,33 +1,152 @@
-// mobile nav toggle
-const mobileToggle = document.getElementById('mobileToggle');
-const nav = document.querySelector('.nav');
+// ==========================
+// SCROLL ANIMATION
+// ==========================
+const sections = document.querySelectorAll(".section");
 
-mobileToggle.addEventListener('click', () => {
-  if(nav.style.display === 'flex') {
-    nav.style.display = '';
-  } else {
-    nav.style.display = 'flex';
-    nav.style.flexDirection = 'column';
-    nav.style.position = 'absolute';
-    nav.style.right = '20px';
-    nav.style.top = '66px';
-    nav.style.background = 'rgba(11,13,15,0.95)';
-    nav.style.padding = '12px';
-    nav.style.borderRadius = '10px';
-  }
-});
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-  anchor.addEventListener('click', function(e){
-    const target = document.querySelector(this.getAttribute('href'));
-    if(target){
-      e.preventDefault();
-      target.scrollIntoView({behavior:'smooth', block:'start'});
-      // close mobile nav if open
-      if(window.innerWidth < 700 && nav.style.display === 'flex'){
-        nav.style.display = '';
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
       }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+sections.forEach(sec => observer.observe(sec));
+
+
+// ==========================
+// DARK / LIGHT MODE FIXED
+// ==========================
+const toggle = document.getElementById("themeToggle");
+const body = document.body;
+
+// SAFETY CHECK
+if (toggle) {
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") {
+    body.classList.add("light");
+    toggle.textContent = "☀️";
+  }
+
+  // Toggle theme
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("light");
+
+    if (body.classList.contains("light")) {
+      toggle.textContent = "☀️";
+      localStorage.setItem("theme", "light");
+    } else {
+      toggle.textContent = "🌙";
+      localStorage.setItem("theme", "dark");
     }
   });
+
+}
+// ==========================
+// FLOATING NAV SHOW ON SCROLL
+// ==========================
+const floatingNav = document.getElementById("floatingNav");
+const navItems = document.querySelectorAll(".floating-nav .nav-item");
+const sectionsNav = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  // Show navbar after scroll
+  if (window.scrollY > 300) {
+    floatingNav.classList.add("show");
+  } else {
+    floatingNav.classList.remove("show");
+  }
+
+  // Active section glow
+  let current = "";
+  sectionsNav.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navItems.forEach(item => {
+    item.classList.remove("active");
+    if (item.getAttribute("href") === `#${current}`) {
+      item.classList.add("active");
+    }
+  });
+});
+const modal = document.getElementById("serviceModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
+const modalList = document.getElementById("modalList");
+
+const serviceData = {
+  frontend: {
+    title: "Frontend Development",
+    desc: "Building responsive and accessible interfaces using modern tools.",
+    list: [
+      "HTML, CSS, JavaScript",
+      "React UI Development",
+      "GSAP Animations",
+      "Responsive Web Design",
+      "UX Interaction Design"
+    ]
+  },
+  backend: {
+    title: "Backend Development",
+    desc: "Robust backend systems and APIs.",
+    list: [
+      "Node.js & Express",
+      "Java & Python",
+      "REST APIs",
+      "Authentication Systems"
+    ]
+  },
+  fullstack: {
+    title: "Full-Stack Web Development",
+    desc: "Complete web solutions from UI to server.",
+    list: [
+      "Frontend + Backend Integration",
+      "Database Connectivity",
+      "Deployment & Hosting"
+    ]
+  },
+  database: {
+    title: "Database Design & Management",
+    desc: "Secure and scalable database systems.",
+    list: [
+      "MySQL / MongoDB",
+      "Database Optimization",
+      "Data Security"
+    ]
+  },
+  git: {
+    title: "Version Control & Git",
+    desc: "Professional collaboration workflows.",
+    list: [
+      "Git & GitHub",
+      "Branching Strategies",
+      "Team Collaboration"
+    ]
+  }
+};
+
+function openModal(type) {
+  const data = serviceData[type];
+  modalTitle.textContent = data.title;
+  modalDesc.textContent = data.desc;
+  modalList.innerHTML = data.list.map(i => `<li>${i}</li>`).join("");
+  modal.classList.add("show");
+}
+
+function closeModal() {
+  modal.classList.remove("show");
+}
+
+// Close on outside click
+modal.addEventListener("click", e => {
+  if (e.target === modal) closeModal();
 });
