@@ -1,3 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+
+
+
+
 /* ===============================
    CSS VARIABLES (DARK / LIGHT)
 ================================ */
@@ -387,6 +409,71 @@ footer {
     display: none;
   }
 }
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+
+/* MOBILE */
+@media (max-width: 480px) {
+
+  .hero-name {
+    font-size: 28px;
+  }
+
+  .hero-role {
+    font-size: 13px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-arch {
+    width: 180px;
+    height: 250px;
+  }
+
+  .hero-arch img {
+    width: 120px;
+    height: 160px;
+  }
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+
+  .hero-name {
+    font-size: 34px;
+  }
+
+  .hero-buttons {
+    gap: 12px;
+  }
+
+  .hero-arch {
+    width: 210px;
+    height: 290px;
+  }
+
+  .hero-arch img {
+    width: 140px;
+    height: 190px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+
+  .hero-name {
+    font-size: 44px;
+  }
+
+  .hero-container {
+    padding-top: 120px;
+  }
+}
+
 /* ===============================
    CONTACT SECTION (SEWAK STYLE)
 ================================ */
@@ -1144,3 +1231,4 @@ body.light .hero-social a {
   font-size: 16px;
   line-height: 1;
 }
+
